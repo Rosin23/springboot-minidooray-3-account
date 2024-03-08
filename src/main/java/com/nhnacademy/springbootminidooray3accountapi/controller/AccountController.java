@@ -2,6 +2,8 @@ package com.nhnacademy.springbootminidooray3accountapi.controller;
 
 import com.nhnacademy.springbootminidooray3accountapi.entity.Account;
 import com.nhnacademy.springbootminidooray3accountapi.service.AccountService;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +13,6 @@ import java.util.List;
 
 @RestController
 public class AccountController {
-
 
     private final AccountService accountService;
 
