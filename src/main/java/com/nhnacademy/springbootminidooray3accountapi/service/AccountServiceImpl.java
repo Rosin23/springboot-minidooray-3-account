@@ -4,14 +4,13 @@ import com.nhnacademy.springbootminidooray3accountapi.Dto.AccountRequest;
 import com.nhnacademy.springbootminidooray3accountapi.entity.Account;
 import com.nhnacademy.springbootminidooray3accountapi.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @RequiredArgsConstructor
-@Service
-public class AccountServiceImpl{
+@Service("accountservice")
+public class AccountServiceImpl implements AccountService{
 
     private final AccountRepository accountRepository;
 
@@ -19,7 +18,7 @@ public class AccountServiceImpl{
         return accountRepository.findAll();
     }
 
-
+    @Override
     public Account createAccount(AccountRequest request) {
         return accountRepository.save(request.toEntity());
     }

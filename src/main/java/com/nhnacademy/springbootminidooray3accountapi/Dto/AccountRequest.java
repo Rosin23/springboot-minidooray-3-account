@@ -2,7 +2,9 @@ package com.nhnacademy.springbootminidooray3accountapi.Dto;
 
 
 import com.nhnacademy.springbootminidooray3accountapi.entity.Account;
+import lombok.Data;
 
+@Data
 public class AccountRequest {
 
     private String id;
@@ -12,6 +14,7 @@ public class AccountRequest {
 
     public Account toEntity(){
         return Account.builder()
+                .id(id)
                 .password(password)
                 .email(email)
                 .state(state)

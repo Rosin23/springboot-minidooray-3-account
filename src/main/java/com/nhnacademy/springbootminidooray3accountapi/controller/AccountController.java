@@ -1,14 +1,12 @@
 package com.nhnacademy.springbootminidooray3accountapi.controller;
 
+import com.nhnacademy.springbootminidooray3accountapi.Dto.AccountRequest;
 import com.nhnacademy.springbootminidooray3accountapi.entity.Account;
 import com.nhnacademy.springbootminidooray3accountapi.service.AccountService;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.nhnacademy.springbootminidooray3accountapi.service.AccountServiceImpl;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,8 +19,8 @@ public class AccountController {
     }
 
     @PostMapping("/signup")
-    public Account createAccount() {
-        return accountService.createAccount();
+    public Account createAccount(@Valid @RequestBody AccountRequest request) {
+        return accountService.createAccount(request);
     }
 
     @GetMapping("/accounts")

@@ -5,15 +5,13 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "account")
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
 public class Account {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 50)
     private String id;
 
@@ -28,7 +26,8 @@ public class Account {
 
     //builder pattern
     @Builder
-    public Account(String password, String email, String state){
+    public Account(String id, String password, String email, String state){
+        this.id = id;
         this.password = password;
         this.email = email;
         this.state = state;
