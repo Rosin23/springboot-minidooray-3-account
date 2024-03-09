@@ -1,17 +1,17 @@
 package com.nhnacademy.springbootminidooray3accountapi.service;
 
+import com.nhnacademy.springbootminidooray3accountapi.Dto.AccountRequest;
 import com.nhnacademy.springbootminidooray3accountapi.entity.Account;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface AccountService {
 
     List<Account> getAccounts();
 
-    Account createAccount();
+    Account createAccount(AccountRequest request);
 
     void deleteAccount(String id);
 
+    Account modifyAccount(Account account);
 }
